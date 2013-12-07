@@ -3,3 +3,10 @@
   background-size: cover;
   height: 500px;
 }
+.headline {
+  background-color: rgba(0,0,0,0.4);
+  color: #fff;
+  text-align: center;
+  margin-top: 75px;
+  padding: 10px;
+}
