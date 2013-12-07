@@ -1,27 +1,5 @@
-!!! 5
-html(lang='en')
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    meta(name='description', content='')
-    meta(name='author', content='')
-    link(rel='shortcut icon', href='../../docs-assets/ico/favicon.png')
-    title Jumbotron Template for Bootstrap
-    // Bootstrap core CSS
-    link(href='http://netdna.bootstrapcdn.com/bootswatch/3.0.2/united/bootstrap.min.css', rel='stylesheet')
-    // Custom styles for this template
-    link(href='jumbotron.css', rel='stylesheet')
-    // My stylesheet
-    link(href='/stylesheets/style.css', rel="stylesheet")
-    // Just for debugging purposes. Don't actually copy this line!
-    //if lt IE 9
-      script(src='../../docs-assets/js/ie8-responsive-file-warning.js')
-    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
-    //if lt IE 9
-      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
-      script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
-  body
+extend layout
+block content
     .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
       .container
         .navbar-header
@@ -41,7 +19,7 @@ html(lang='en')
           p
             | Share photos and stories with your elderly loved ones from your whole family in a way they can understand and cherish.
           p
-            a.btn.btn-primary.btn-lg(role='button') Start Sharing »
+            a.btn.btn-primary.btn-lg(role='button', href="/signup") Start Sharing »
     .container
       // Example row of columns
       .row
@@ -49,24 +27,11 @@ html(lang='en')
           h2 Anytime, Anywhere
           p
             | Take photos on any device, smartphone, tablet or camera. Instantly upload them to Gift Your Stories and they will be delievered to your loved one.
-          p
-            a.btn.btn-default(href='#', role='button') View details »
         .col-md-4
           h2 The whole family
           p
             | Anyone in your family can share photos and messages. They simply upload their photos at the touch of a button to Gift Your Stories and all the stories will be sent to your loved ones.
-          p
-            a.btn.btn-default(href='#', role='button') View details »
         .col-md-4
           h2 Beautiful Albums
           p
             | At the end of each month we use all the uploaded photos and messages to create a beautiful, real album of photos and messages from your whole family and send them to your loved one. This costs £30.
-          p
-            a.btn.btn-default(href='#', role='button') View details »
-      hr
-      footer
-        p © Company 2013
-
-    // Placed at the end of the document so the pages load faster
-    script(src='https://code.jquery.com/jquery-1.10.2.min.js')
-    script(src='../../dist/js/bootstrap.min.js')

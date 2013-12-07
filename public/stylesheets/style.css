@@ -10,3 +10,36 @@
   margin-top: 75px;
   padding: 10px;
 }
+.signupForm {
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 0px;
+}
+.signupHeader {
+  background-color: #800080;
+}
+.signupHeader h1 {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0px;
+  color: #fff;
+}
+.signupBody {
+  background-color: #d3d3d3;
+  text-align: center;
+}
+.signupBody h2 {
+  margin: 0px;
+  color: #fff;
+}
+.signupBody form {
+  padding: 30px;
+}
+.signupBody label {
+  display: block;
+}
+.signupBody input {
+  border: none;
+  height: 40px;
+}
