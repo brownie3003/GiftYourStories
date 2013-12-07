@@ -18,7 +18,9 @@ app.use(stylus.middleware({
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
-    res.end("Hi there!");
+  res.render('index',
+  { title : 'Home' }
+  )
 })
 
 var port = process.env.PORT || 5000;
