@@ -19,10 +19,9 @@
   margin-bottom: 20px;
 }
 .walkthrough {
-  background-color: #2980b9;
+  background-color: #188d68;
   color: #fff;
   width: 100%;
-  height: 275px;
 }
 .walkthrough h1,
 .walkthrough h2 {
@@ -39,6 +38,7 @@
   margin: auto;
   width: 20%;
   margin-top: 20px;
+  margin-bottom: 15px;
 }
 .moreInfo h1,
 .moreInfo h2 {
