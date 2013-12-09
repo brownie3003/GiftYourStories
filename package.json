@@ -5,6 +5,7 @@
     "dependencies" : {
         "express" : "3.4.6",
         "jade" : "*",
-        "stylus" : "*"
+        "stylus" : "*",
+        "node-parse-api": "0.2.2"
     }
 }

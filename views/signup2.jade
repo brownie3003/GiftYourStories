@@ -1,0 +1,23 @@
+extend layout
+block content
+        .container
+            h2
+              | So we'll send your album to #{theirName}
+            h2
+              | Who are you? So we know who to send the album from?
+            form.form-horizontal(role='form', method="POST", action="/step3")
+              input(type="hidden", name="theirName", id="theirName", value="#{theirName}")
+              .form-group
+                label.col-sm-2.control-label(for='yourName') Your Name
+                .col-sm-10
+                  input#yourName.form-control(type='text', placeholder='Name', name="yourName")
+              .form-group
+                label.col-sm-2.control-label(for='yourEmail') Your Email
+                .col-sm-10
+                  input#yourEmail.form-control(type="email", name="yourEmail", placeholder="Your email")
+              .form-group
+                .col-sm-offset-2.col-sm-10
+                  input.btn.btn-default(type='submit') Next
+
+
+    script(src="/javascripts/signup.js")
