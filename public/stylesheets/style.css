@@ -38,6 +38,14 @@
   display: block;
   margin: auto;
   width: 20%;
+  margin-top: 20px;
+}
+.moreInfo h1,
+.moreInfo h2 {
+  text-align: center;
+}
+.moreInfo img {
+  padding-top: 20px;
 }
 .col-md-4:nth-child(2) img {
   padding-top: 30px;
