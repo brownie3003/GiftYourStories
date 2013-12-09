@@ -22,13 +22,15 @@ app.use(stylus.middleware({
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
-  res.render('index',
-  { title : 'Home' }
-  )
-})
+  res.render('index', {title : 'Home'});
+});
 
 app.get('/signup', function (req, res) {
     res.render('signup');
+});
+
+app.post('/step2', function(req, res) {
+  var data = req.body;
 });
 
 var port = process.env.PORT || 5000;
