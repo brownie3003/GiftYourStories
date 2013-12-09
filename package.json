@@ -6,6 +6,7 @@
         "express" : "3.4.6",
         "jade" : "*",
         "stylus" : "*",
-        "node-parse-api": "0.2.2"
+        "node-parse-api": "0.2.2",
+        "email-templates": "0.1.0"
     }
 }
