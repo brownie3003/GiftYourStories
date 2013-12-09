@@ -3,18 +3,40 @@ block content
     .jumbotron
       .container
         .headline
-          h1 In a digital world, keep your loved ones in the conversation
+          h1 Share your family photos with the grandparents.
           p
-            | Share photos and stories with your elderly loved ones from your whole family in a way they can understand and cherish.
+            | For a £30 monthly subscription we send printed albums to your loved ones.
           p
             a.btn.btn-primary.btn-lg(role='button', href="/signup") Start Sharing »
-    .container
-      // Example row of columns
+    .walkthrough
+      .container
+        .row
+          .col-md-4
+            h2 1. Take or choose photos
+            img(src='/images/camera.png') 
+          .col-md-4
+            h2 2. Email to Gift Your Stories
+            img(src='/images/attachment.png')
+          .col-md-4
+            h2 3. Send a photo album monthly
+            img(src='/images/album.png')
+        .row
+          .col-md-12
+            a.btn.btn-primary.btn-lg(role='button', href="#more") Find Out More
+    .container.moreInfo
       .row
+          .col-md-4
+            img(src='/images/photo.png') 
+          .col-md-4
+            img(src='/images/familyipad.png')
+          .col-md-4
+            img(src='/images/granny.png')
+      .row
+        a#more
         .col-md-4
           h2 Anytime, Anywhere
           p
-            | Take photos on any device, smartphone, tablet or camera. Instantly upload them to Gift Your Stories and they will be delievered to your loved one.
+            | Take photos or select them from any of your devices; smartphone, tablet or camera. Instantly upload them to Gift Your Stories and they will be available for your family.
         .col-md-4
           h2 The whole family
           p
@@ -22,4 +44,4 @@ block content
         .col-md-4
           h2 Beautiful Albums
           p
-            | Using the photos shared we will create beautiful photo albums. These will be available online for you to share or, for just £30, we can print and deliver a bound copy of the photo album directly to your loved one for them to enjoy. 
+            | Using the photos shared we will automatically create beautiful photo albums. These will be available online for you to share or, for just £30, we can print and deliver a bound copy directly to your grandparents for them to enjoy. 
