@@ -1,6 +1,11 @@
 var express = require('express'),
     stylus = require('stylus'),
-    Parse = require('node-parse-api').Parse;
+    Parse = require('node-parse-api').Parse,
+    nodemailer = require('nodemailer'),
+    path = require('path'),
+    templatesDir = path.resolve(__dirname, '/templates'),
+    emailTemplates = require('email-templates');
+
 
 var APP_ID = "ey1VPmwuX0y8XmhbwqmP1fMPGE8CZWmiQLpQBOpo";
 var MASTER_KEY = "ZjPUYyvpN6MzHJH2QEsh8ENewsS1DTtEKtxnZUyQ";
@@ -52,6 +57,38 @@ app.post('/step3', function(req, res) {
     if(err) throw err; 
     console.log(response);
   });
+
+  emailTemplates(templatesDir, function(err, template) {
+    if(err) throw err;
+    var smtpTransport = nodemailer.createTransport("SMTP", {
+      service: "Zoho",
+      auth: {
+        user: "hello@weaveuk.com",
+        pass: "weave2013"
+      }
+    });
+    var locals = {};
+
+    template('signup', locals, function(err, html, text) {
+      var mailOptions = {
+        from: "Gift Your Stories <hello@weaveuk.com>",
+        to: yourEmail,
+        bcc: "nicangeli@gmail.com",
+        subject: "Thanks for joining Gift Your Stories",
+        html: html,
+        gererateTextFromHTML: true
+      };
+
+      if(err) throw err;
+
+      smtpTransport.sendMail(mailOptions, function(error, responseStatus) {
+        if(error)  throw err;
+        console.log(responseStatus.message);
+      })
+    })
+
+  });
+
   res.render('signup3', {theirName: theirName, yourName: yourName, yourEmail: yourEmail, customEmail: customEmail});
 
 
