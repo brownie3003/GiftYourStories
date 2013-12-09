@@ -3,7 +3,7 @@ var express = require('express'),
     Parse = require('node-parse-api').Parse,
     nodemailer = require('nodemailer'),
     path = require('path'),
-    templatesDir = path.resolve(__dirname, '/templates'),
+    templatesDir = path.resolve(__dirname, 'templates'),
     emailTemplates = require('email-templates');
 
 
