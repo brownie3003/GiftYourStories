@@ -171,7 +171,11 @@ app.post('/family', function(req, res) {
 
   res.render('familyAdded');
 
-})
+});
+
+app.get('/tutorial', function(req, res) {
+  res.render('tutorial');
+});
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {

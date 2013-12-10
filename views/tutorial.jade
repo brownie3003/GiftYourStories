@@ -1,0 +1,55 @@
+extend layout
+block content
+        .container
+            h1 Do you want to send photos from an iPhone, Android phone or Computer?
+            #accordion.panel-group
+              .panel.panel-default
+                .panel-heading
+                  h4.panel-title
+                    a(data-toggle='collapse', data-parent='#accordion', href='#iPhone')
+                      | iPhone
+                #iPhone.panel-collapse.collapse
+                  .panel-body
+                    ol
+                        li Open the Camera Application
+                        li Tap the photos button in the bottom left
+                            br
+                            img(src="/images/select.png")
+                        li Select the photo you want to share with GiftYourStories
+                        li Tap the share buttom from the bottom left
+                            br
+                            img(src="/images/tapShare.png")
+                        li Select Mail
+                        li Enter your unique GiftYourStories email address in the to field that you were given when you signed up. If you can't remember it we emailed it to you when you first joined. 
+                            br
+                            img(src="/images/email.png")
+              .panel.panel-default
+                .panel-heading
+                  h4.panel-title
+                    a(data-toggle='collapse', data-parent='#accordion', href='#android')
+                      | Android
+                #android.panel-collapse.collapse
+                  .panel-body
+                    ol
+                        li Open the Gallery Application
+                        li Select the folder that contains the photos you want to send. (Probably Camera)
+                        li Select the photo you want to share with GiftYourStories
+                        li Tap the Mail buttom from the top of the screen
+                        li Select Mail
+                        li Enter your unique GiftYourStories email address in the to field that you were given when you signed up. If you can't remember it we emailed it to you when you first joined. 
+                            br
+                            img(src="/images/androidEmail.png")
+              .panel.panel-default
+                .panel-heading
+                  h4.panel-title
+                    a(data-toggle='collapse', data-parent='#accordion', href='#collapseThree')
+                      | Computer
+                #collapseThree.panel-collapse.collapse
+                  .panel-body
+                    ol
+                        li Open your email application (Outlook etc) or browse to your email provider online (Gmail, Hotmail etc)
+                        li Compose a new email
+                        li Attach the photo/s to the email
+                        li Enter your unique GiftYourStories email address in the to field that you were given when you signed up. If you can't remember it we emailed it to you when you first joined. 
+                        li Send us your photos
+    script(src="/javascripts/signup.js")
