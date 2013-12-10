@@ -26,8 +26,9 @@ block content
                                 .form-group
                                     .col-sm-1
                                     .col-sm-10
-                                        input.btn.btn-default(type='submit', value='Next')
+                                        input.btn.btn-default(type='submit', value='Next', id="finish")
 
 
 
-    script(src="/javascripts/signup.js")
+    script
+        mixpanel.track_links('#finish', 'entered_email_name_continue');

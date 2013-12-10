@@ -52,4 +52,5 @@ block content
                         li Attach the photo/s to the email
                         li Enter your unique GiftYourStories email address in the to field that you were given when you signed up. If you can't remember it we emailed it to you when you first joined. 
                         li Send us your photos
-    script(src="/javascripts/signup.js")
+    script
+      mixpanel.track('tutorial_page_viewed')

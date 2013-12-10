@@ -11,7 +11,7 @@ block content
                         .signupBody
                             h2.step3
                                 | Thanks, #{yourName}! You're almost ready to go. Take a look at the 
-                                a(href="/tutorial") tutorial 
+                                a(href="/tutorial", class="tutorial") tutorial 
                                 | for help on sending photos to Gift Your Stories. Or...
                             h2.step3
                                 | Would you like to get other family members to contribute photos to this album?
@@ -41,8 +41,10 @@ block content
                                 .form-group
                                     .col-sm-1
                                     .col-sm-10
-                                        input.btn.btn-default(type='submit', value='Finish')
+                                        input.btn.btn-default(type='submit', value='Finish', id="sendFamily")
 
 
 
-    script(src="/javascripts/signup.js")
+    script
+      mixpanel.track_links('.tutorial', 'tutorial_clicked')
+      mixpanel.track_links('#sendFamily', 'family_submitted')

@@ -15,12 +15,13 @@ block content
                                 .form-group
                                     .col-xs-2.col-md-3
                                     .col-xs-8.col-md-6
-                                        input#theirName.form-control(type='text', placeholder='Grandparent\'s name', name="theirName")
+                                        input#theirName.form-control(type='text', placeholder="Grandparent\'s name", name="theirName")
                                 .form-group
                                     .col-sm-1
                                     .col-sm-10
-                                        input.btn.btn-default(type='submit', value='Next')
+                                        input.btn.btn-default(type='submit', value='Next', id="next")
 
 
 
-    script(src="/javascripts/signup.js")
+    script
+        mixpanel.track_links("#next", 'photo_album_for_next_clicked');

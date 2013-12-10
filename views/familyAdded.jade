@@ -8,7 +8,8 @@ block content
                         | Thanks for signing up your family members, they should receive an email with further details shortly.
                     h2 Confused? 
                     p If you need help sending photos to Gift Your Stories please check out the 
-                      a(href="/tutorials") tutorial
+                      a(href="/tutorials", class="tutorial") tutorial
 
 
-    script(src="/javascripts/signup.js")
+    script
+      mixpanel.track('.tutorial', 'tutorial_clicked')

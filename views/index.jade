@@ -7,7 +7,7 @@ block content
           p
             | For a £30 monthly subscription we send beautiful printed albums to your loved ones.
           p
-            a.btn.btn-primary.btn-lg(role='button', href="/signup") Start Sharing »
+            a.btn.btn-primary.btn-lg(role='button', href="/signup", class="startSharing") Start Sharing »
     .walkthrough
       .container
         .row
@@ -23,7 +23,7 @@ block content
         .row
           .col-md-4
           .col-md-4
-            a.btn.btn-primary.btn-lg(role='button', href="#more") Find Out More
+            a.btn.btn-primary.btn-lg(role='button', href="#more", class="more") Find Out More
     .container.moreInfo
       .row
         a#more
@@ -45,4 +45,8 @@ block content
       .row
         .col-md-4
         .col-md-4
-          a.btn.btn-primary.btn-lg(role='button', href="/signup") Start Sharing  
+          a.btn.btn-primary.btn-lg(role='button', href="/signup", class="startSharing") Start Sharing  
+    script
+      mixpanel.track('loading_page_loaded')
+      mixpanel.track_links('.startSharing', 'start_sharing_clicked')
+      mixpanel.track_links('.more', 'find_out_more_clicked')
