@@ -18,7 +18,7 @@ block content
                             p.step3
                                 | (Don't worry you can change/add people later, leave it blank if you can't find the emails now)
 
-                            form.form-horizontal.step3(role='form', method="POST", action="/family")
+                            form.form-horizontal.step3(role='form', method="POST", action="/family", id="familyForm")
                                 input#customEmail.form-control(type="hidden", name="customEmail", value="#{customEmail}")
                                 input(type="hidden", name="theirName", id="theirName", value="#{theirName}")
                                 input(type="hidden", name="yourName", id="yourName", value="#{yourName}")
@@ -45,6 +45,6 @@ block content
 
 
 
-    script
-      mixpanel.track_links('.tutorial', 'tutorial_clicked')
-      mixpanel.track_links('#sendFamily', 'family_submitted')
+        script
+          mixpanel.track_links('.tutorial', 'tutorial_clicked')
+        script(src="/javascripts/signup.js")

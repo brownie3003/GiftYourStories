@@ -13,7 +13,7 @@ block content
                                 | Great, lets create a photo album for #{theirName}
                             h2.step2
                                 | Please tell us your name and email so we can set up the album
-                            form.form-horizontal.step2(role='form', method="POST", action="/step3")
+                            form.form-horizontal.step2(role='form', method="POST", action="/step3", id="secondForm")
                                 input(type="hidden", name="theirName", id="theirName", value="#{theirName}")
                                 .form-group
                                     .col-xs-2.col-md-3
@@ -26,9 +26,8 @@ block content
                                 .form-group
                                     .col-sm-1
                                     .col-sm-10
-                                        input.btn.btn-default(type='submit', value='Next', id="finish")
+                                        input.btn.btn-default(type='submit', value='Next', id="signup2Next")
 
 
 
-    script
-        mixpanel.track_links('#finish', 'entered_email_name_continue');
+        script(src="/javascripts/signup.js")

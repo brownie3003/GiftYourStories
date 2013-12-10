@@ -11,7 +11,7 @@ block content
                         .signupBody
                             h2.step1
                                 | Who is the photo album for?
-                            form.form-horizontal.step1(role='form', method="POST", action="/step2")
+                            form.form-horizontal.step1(role='form', method="POST", action="/step2", id="firstForm")
                                 .form-group
                                     .col-xs-2.col-md-3
                                     .col-xs-8.col-md-6
@@ -19,9 +19,8 @@ block content
                                 .form-group
                                     .col-sm-1
                                     .col-sm-10
-                                        input.btn.btn-default(type='submit', value='Next', id="next")
+                                        input.btn.btn-default(type='submit', value='Next', id="signupNext")
 
 
 
-    script
-        mixpanel.track_links("#next", 'photo_album_for_next_clicked');
+        script(src="/javascripts/signup.js")
