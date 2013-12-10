@@ -5,6 +5,10 @@
     "dependencies" : {
         "express" : "3.4.6",
         "jade" : "*",
-        "stylus" : "*"
+        "stylus" : "*",
+        "node-parse-api": "0.2.2",
+        "email-templates": "0.1.0",
+        "nodemailer": "0.5.14",
+        "async": "0.2.9"
     }
 }
