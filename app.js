@@ -94,7 +94,8 @@ app.post('/step3', function(req, res) {
 });
 
 app.post('/family', function(req, res) {
-  var familyEmails = [];
+  var familyEmails = [],
+      customEmail = req.body.customEmail;
   if(req.body.family1 != "") {
     familyEmails.push(req.body.family1);
   }
@@ -107,47 +108,54 @@ app.post('/family', function(req, res) {
   if(req.body.family4 != "") {
     familyEmails.push(req.body.family4);
   }
-  parseApp.findMany('User', {customEmail: req.body.customEmail}, function(err, response) {
+  parseApp.findMany('User', {customEmail: customEmail}, function(err, response) {
     if(err) throw err;
-    var user = response[0];
+    console.log(response);
+    var user = response.results[0];
     parseApp.update('User', user.objectId, {familyEmails: familyEmails}, function(err, response) {
       if(err) throw err;
       console.log(response);
     })
   });
 
-  emailTemplates(templatesDir, function(err, template) {
-    if(err) throw err;
-    var smtpTransport = nodemailer.createTransport("SMTP", {
-      service: "Zoho",
-      auth: {
-        user: "hello@weaveuk.com",
-        pass: "weave2013"
-      }
-    });
-    var locals = {customEmail: customEmail};
-
-    template('signup', locals, function(err, html, text) {
-      var mailOptions = {
-        from: "Gift Your Stories <hello@weaveuk.com>",
-        to: yourEmail,
-        bcc: "nicangeli@gmail.com",
-        subject: "Thanks for joining Gift Your Stories",
-        html: html,
-        gererateTextFromHTML: true
-      };
-
+  async.forEach(familyEmails, function(email, callback) {
+    emailTemplates(templatesDir, function(err, template) {
       if(err) throw err;
+      var smtpTransport = nodemailer.createTransport("SMTP", {
+        service: "Zoho",
+        auth: {
+          user: "hello@weaveuk.com",
+          pass: "weave2013"
+        }
+      });
+      var locals = {customEmail: customEmail};
 
-      smtpTransport.sendMail(mailOptions, function(error, responseStatus) {
-        if(error)  throw err;
-        console.log(responseStatus.message);
-      })
+      template('familysignup', locals, function(err, html, text) {
+        var mailOptions = {
+          from: "Gift Your Stories <hello@weaveuk.com>",
+          to: email,
+          bcc: "nicangeli@gmail.com",
+          subject: "You've been added to Gift Your Stories",
+          html: html,
+          gererateTextFromHTML: true
+        };
+
+        if(err) throw err;
+
+        smtpTransport.sendMail(mailOptions, function(error, responseStatus) {
+          if(error)  throw err;
+          console.log(responseStatus.message);
+        })
+      });
+
     });
+    callback();
 
-  });
+  }, function(error) {
+    if(error) throw error;
+  })
 
-  res.render('hello');
+  res.render('familyAdded');
 
 })
 

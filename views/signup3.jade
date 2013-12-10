@@ -11,6 +11,7 @@ block content
             h3
               | Add your family members email addresses below to let them contribute to your photo album
             form.form-horizontal(role='form', method="POST", action="family")
+              input#customEmail.form-control(type="hidden", name="customEmail", value="#{customEmail}")
               .form-group
                 label.col-sm-2.control-label(for='family1') First Email Address
                 .col-sm-10
