@@ -66,10 +66,10 @@ app.post('/step3', function(req, res) {
   emailTemplates(templatesDir, function(err, template) {
 	if(err) throw err;
 	var smtpTransport = nodemailer.createTransport("SMTP", {
-	  service: "Zoho",
+	  service: "Gmail",
 	  auth: {
-		user: "hello@weaveuk.com",
-		pass: "weave2013"
+		user: "team@giftyourstories.com",
+		pass: "giftyourstories2013"
 	  }
 	});
 	var locals = {
@@ -79,7 +79,7 @@ app.post('/step3', function(req, res) {
 
 	template('signup', locals, function(err, html, text) {
 	  var mailOptions = {
-		from: "Gift Your Stories <hello@weaveuk.com>",
+		from: "Gift Your Stories <team@giftyourstories.com>",
 		to: yourEmail,
 		bcc: "nicangeli@gmail.com",
 		subject: "Thanks for joining Gift Your Stories",
@@ -133,10 +133,10 @@ app.post('/family', function(req, res) {
 	emailTemplates(templatesDir, function(err, template) {
 	  if(err) throw err;
 	  var smtpTransport = nodemailer.createTransport("SMTP", {
-		service: "Zoho",
+		service: "Gmail",
 		auth: {
-		  user: "hello@weaveuk.com",
-		  pass: "weave2013"
+		  user: "team@giftyourstories.com",
+		  pass: "giftyourstories2013"
 		}
 	  });
 	  var locals = {
@@ -146,7 +146,7 @@ app.post('/family', function(req, res) {
 
 	  template('familysignup', locals, function(err, html, text) {
 		var mailOptions = {
-		  from: "Gift Your Stories <hello@weaveuk.com>",
+		  from: "Gift Your Stories <team@giftyourstories.com>",
 		  to: email,
 		  bcc: "nicangeli@gmail.com",
 		  subject: "You've been added to Gift Your Stories",
