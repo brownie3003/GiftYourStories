@@ -4,7 +4,8 @@ var express = require('express'),
     nodemailer = require('nodemailer'),
     path = require('path'),
     templatesDir = path.resolve(__dirname, 'templates'),
-    emailTemplates = require('email-templates');
+    emailTemplates = require('email-templates'),
+    async = require('async');
 
 
 var APP_ID = "ey1VPmwuX0y8XmhbwqmP1fMPGE8CZWmiQLpQBOpo";
@@ -67,7 +68,7 @@ app.post('/step3', function(req, res) {
         pass: "weave2013"
       }
     });
-    var locals = {};
+    var locals = {customEmail: customEmail};
 
     template('signup', locals, function(err, html, text) {
       var mailOptions = {
@@ -90,9 +91,65 @@ app.post('/step3', function(req, res) {
   });
 
   res.render('signup3', {theirName: theirName, yourName: yourName, yourEmail: yourEmail, customEmail: customEmail});
-
-
 });
+
+app.post('/family', function(req, res) {
+  var familyEmails = [];
+  if(req.body.family1 != "") {
+    familyEmails.push(req.body.family1);
+  }
+  if(req.body.family2 != "") {
+    familyEmails.push(req.body.family2);
+  }
+  if(req.body.family3 != "") {
+    familyEmails.push(req.body.family3);
+  }
+  if(req.body.family4 != "") {
+    familyEmails.push(req.body.family4);
+  }
+  parseApp.findMany('User', {customEmail: req.body.customEmail}, function(err, response) {
+    if(err) throw err;
+    var user = response[0];
+    parseApp.update('User', user.objectId, {familyEmails: familyEmails}, function(err, response) {
+      if(err) throw err;
+      console.log(response);
+    })
+  });
+
+  emailTemplates(templatesDir, function(err, template) {
+    if(err) throw err;
+    var smtpTransport = nodemailer.createTransport("SMTP", {
+      service: "Zoho",
+      auth: {
+        user: "hello@weaveuk.com",
+        pass: "weave2013"
+      }
+    });
+    var locals = {customEmail: customEmail};
+
+    template('signup', locals, function(err, html, text) {
+      var mailOptions = {
+        from: "Gift Your Stories <hello@weaveuk.com>",
+        to: yourEmail,
+        bcc: "nicangeli@gmail.com",
+        subject: "Thanks for joining Gift Your Stories",
+        html: html,
+        gererateTextFromHTML: true
+      };
+
+      if(err) throw err;
+
+      smtpTransport.sendMail(mailOptions, function(error, responseStatus) {
+        if(error)  throw err;
+        console.log(responseStatus.message);
+      })
+    });
+
+  });
+
+  res.render('hello');
+
+})
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
