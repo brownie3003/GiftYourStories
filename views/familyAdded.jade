@@ -1,8 +1,11 @@
 extend layout
 block content
         .container
-            h2
-              | Great! We've just invited your family too!
+            .row
+                .col-xs-1.col-md-3
+                .col-xs-10.col-md-6
+                    h2(style="text-align: center;")
+                        | Thanks for signing up, you should receive an email with further details shortly.
 
 
     script(src="/javascripts/signup.js")

@@ -9,16 +9,18 @@ block content
                             h1
                                 | Sign up
                         .signupBody
-                            h2
-                                | Who do you want us to send the photo album to?
-                            form.form-horizontal(role='form', method="POST", action="/step2")
-                              .form-group
-                                label.col-sm-2.control-label(for='theirName') Their name
-                                .col-sm-10
-                                  input#theirName.form-control(type='text', placeholder='Name', name="theirName")
-                              .form-group
-                                .col-sm-10
-                                  input.btn.btn-default(type='submit') Next
+                            h2.step1
+                                | Who is the photo album for?
+                            form.form-horizontal.step1(role='form', method="POST", action="/step2")
+                                .form-group
+                                    .col-xs-2.col-md-3
+                                    .col-xs-8.col-md-6
+                                        input#theirName.form-control(type='text', placeholder='Grandparent\'s name', name="theirName")
+                                .form-group
+                                    .col-sm-1
+                                    .col-sm-10
+                                        input.btn.btn-default(type='submit', value='Next')
+
 
 
     script(src="/javascripts/signup.js")
