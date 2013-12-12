@@ -44,6 +44,9 @@ body {
   margin-top: 20px;
   margin-bottom: 15px;
 }
+.walkthrough .col-md-4:nth-child(2) img {
+  padding-top: 0px;
+}
 .moreInfo {
   padding-bottom: 20px;
   background-color: #fff;
