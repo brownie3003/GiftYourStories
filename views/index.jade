@@ -24,28 +24,57 @@ block content
           .col-md-4
           .col-md-4
             a.btn.btn-primary.btn-lg(role='button', href="#more", class="more") Find Out More
-    .container.moreInfo
-      .row
-        a#more
-        .col-md-4
-          img(src='/images/photo.png') 
-          h2 Anytime, Anywhere
-          p
-            | Take photos or select them from any of your devices; smartphone, tablet or camera. Instantly upload them to Gift Your Stories and they will be available for your family.
-        .col-md-4
-          img(src='/images/familyipad.png')
-          h2 The whole family
-          p
-            | Anyone in your family can share photos and messages, wherever they are in the world. They simply upload their photos at the touch of a button to Gift Your Stories and all the stories will be sent to your loved ones.
-        .col-md-4
-          img(src='/images/granny.png')
-          h2 Beautiful Albums
-          p
-            | Using the photos shared we will automatically create beautiful photo albums. These will be available online for you to share or, for just £30, we can print and deliver a bound copy directly to your grandparents for them to enjoy. 
-      .row
-        .col-md-4
-        .col-md-4
-          a.btn.btn-primary.btn-lg(role='button', href="/signup", class="startSharing") Start Sharing  
+    .moreInfo
+      .container
+        .row#more
+          .col-md-4
+            img(src='/images/photo.png') 
+            h2 Anytime, Anywhere
+            p
+              | Take photos or select them from any of your devices; smartphone, tablet or camera. Instantly upload them to Gift Your Stories and they will be available for your family.
+          .col-md-4
+            img(src='/images/familyipad.png')
+            h2 The whole family
+            p
+              | Anyone in your family can share photos and messages, wherever they are in the world. They simply upload their photos at the touch of a button to Gift Your Stories and all the stories will be sent to your loved ones.
+          .col-md-4
+            img(src='/images/granny.png')
+            h2 Beautiful Albums
+            p
+              | Using the photos shared we will automatically create beautiful photo albums. These will be available online for you to share or, for just £30, we can print and deliver a bound copy directly to your grandparents for them to enjoy. 
+        .row
+          .col-md-4
+          .col-md-4
+            a.btn.btn-primary.btn-lg(role='button', href="/signup", class="startSharing") Start Sharing 
+    .about 
+      .container
+        .row
+          .col-xs-12
+            h1#about About
+            p
+              | Our grandparents love seeing photos of us. Our parents, well our mothers actually, spend a lot of time taking photos of us and asking us to send them our photos for our grandparents. They not only do this for us, but for all of our sibilings as well. 
+            p 
+              | Even after they've collected all the photos, the task of sharing them with our grandparents has only just begun. Someone then has to upload all of these photos to a printing website and manually arrange them into a photobook. Now this can be a fun activity (or so we've been told) but it is time consuming, consequently our grandparents only get these photos once a year... We take photos on a daily basis, and granted not all the photos we take are suitable for the grandparents, but to only get photos to our grandparents once a year does not reflect what is really happening in our lives.
+            p 
+              | Gift Your Stories is here to change this, we do two things.
+            ul
+              li
+                | 1) We make it incredibly easy to collect the photos in one place.
+              li
+                | 2) We automatically create beautiful photobooks so your grandparents get to see more photos of you.
+            img(src="/images/photobook.jpg")
+            h2
+              | How do we do this?
+            h3 Collaboration
+            p
+              | We noticed that in the last couple of years smartphone photography has become the norm. These phones now have exceptionally good cameras on them, but not only that, they are constantly connected to the internet.
+            p 
+              | At Gift Your Stories we set up a family photo album so that you can share any photo you want with two taps. But not only you can do this, anyone in your family can, wherever they are.
+            p 
+              | Task one complete.
+            h3 Gifting
+            p
+              | With all your family photos for your grandparents available in one place it's fairly easy to create a photo album, but we know you are busy people so we automatically generate photobooks for you. This means you can send these to your grandparents, again with just two taps. Of course photobooks cost money so the photos will always be available online for you to share with your grandparents next time they visit or for them to view if they are comfortable online.
     script
       mixpanel.track('loading_page_loaded')
       mixpanel.track_links('.startSharing', 'start_sharing_clicked')

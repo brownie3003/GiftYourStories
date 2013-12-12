@@ -1,5 +1,6 @@
 body {
   padding-top: 50px;
+  background-color: #f5f5f5;
 }
 @font-face {
   font-family: entypo;
@@ -46,6 +47,11 @@ body {
 .walkthrough .col-md-4:nth-child(2) img {
   padding-top: 30px;
 }
+.moreInfo {
+  padding-bottom: 20px;
+  background-color: #fff;
+  width: 100%;
+}
 .moreInfo h1,
 .moreInfo h2 {
   text-align: center;
@@ -59,6 +65,21 @@ body {
   display: block;
   margin: auto;
   width: 80%;
+}
+#more {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.about ul {
+  list-style-type: none;
+}
+.about img {
+  display: block;
+  margin: auto;
+}
+#about {
+  margin-top: -50px;
+  padding-top: 70px;
 }
 .signupForm {
   margin: 0 auto;
